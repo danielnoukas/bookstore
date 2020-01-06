@@ -39,7 +39,16 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     <title>Document</title>
 </head>
 <body>
+
     <h1>Otsing</h1>
+    <?php
+    require_once 'db_connection.php';
+
+    $year = $_GET['year'];
+    $title = $_GET['title'];
+    
+    ?>
+
 
     <form action="index.php" method="get">
        
@@ -54,10 +63,15 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
 
 
 <?php
-    while ($row = $stmt->fetch())
-{
-    echo '<li>' . $row['title'].' '.$row['first_name'].' '.$row['last_name'] . "</li>";
-}
+
+    $stmt = $pdo->prepare('SELECT * FROM books WHERE release_date LIKE :year AND title LIKE :title');
+    $stmt->execute(['year' => '%' . $year . '%', 'title' => '%' . $title . '%']);
+    
+    echo '<ul>';
+    while ( $row = $stmt->fetch() ) {
+        echo '<li><a href="book.php?id=' . $row['id'] . '">' . $row['title'] . '</a></li>';
+    }
+    echo '</ul>';
 ?>
     </ul>
 </body>
