@@ -8,6 +8,11 @@ $book = $stmt->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+body {
+  background-color: #ccbf9b;
+}
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,22 +20,28 @@ $book = $stmt->fetch();
     <title><?= $book['title']; ?></title>
 </head>
 <body>
-<br>
+<br> 
+<h3>Raamatu pealkiri</h3>
 <?php echo $book['title']; ?>  
 <br>
+<h3>Raamatu autor</h3>
 <?php echo $book['first_name']; ?> <?php echo $book['last_name']; ?>
+<h3>Raamatu ilmumisaasta</h3>
 <?php echo $book['release_date']; ?>  
 <br>
+<h3>Raamatu keel</h3>
 <?php echo $book['language']; ?>  
 <br>
+<h3>Raamatu kirjeldus</h3>
 <?php echo $book['summary']; ?>  
 <br>
+<h3>Raamatu hind</h3>
 <?php echo $book['price']; ?>
 <br> 
+<h3>Raamatu lehekülgede arv</h3> 
 <?php echo $book['pages']; ?> 
-<br> 
-echo "<body style='background-color:yellow'>";
-
+<br>
+<img src="<?php echo $book['cover_path']; ?>" alt="Smiley face" height="150" width="150">
 
 </body>
 </html>

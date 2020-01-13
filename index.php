@@ -39,7 +39,7 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     <title>Document</title>
 </head>
 <body>
-
+<body style='background-color:#e6e5ca'>
     <h1>Otsing</h1>
     <?php
     require_once 'db_connection.php';
@@ -54,7 +54,9 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
        
         <input type='text' name='title' placeholder='Pealkiri'>
         <br>
+        <br>
         <input type='text' name='year' placeholder='Aasta'>
+        <br>
         <br>
         <input type='submit' value='Otsi'>
     </form>
