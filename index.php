@@ -11,6 +11,8 @@ LEFT JOIN authors ON authors.id=book_authors.author_id
 WHERE title LIKE :title AND release_date= :year');
 $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +20,7 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <body style='background-color:#e6e5ca'>

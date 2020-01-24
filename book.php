@@ -14,7 +14,10 @@ $book = $stmt->fetch();
 <html lang="en">
 <style>
 body {
-  background-color: #ccbf9b;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuboWmS5fFVld3fycurHVMU3eojS6yXjbk_PgE0Onge0sRy5gv&s");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 </style>
 <head>
@@ -22,29 +25,6 @@ body {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $book['title']; ?></title>
-<<<<<<< HEAD
-
-    
-    
-</head>
-<body>
-<a href="delete.php?id=<?php echo $id;  ?>">DELETE</a>
-<a href="edit.php?id=<?php echo $id;  ?>">EDIT</a>
-<br>
-<?php  echo $book['title']; ?>  
-<br>
-<?php echo $book['release_date']; ?>  
-<br>
-<?php echo $book['language']; ?>  
-<br>
-<?php echo $book['summary']; ?>  
-<br>
-<?php echo $book['price']; ?>
-<br> 
-<?php echo $book['pages']; ?> 
-<br> 
-<?php echo $book['first_name'] ." ". $book['last_name']; ?> 
-=======
 </head>
 <body>
 <br> 
@@ -73,6 +53,5 @@ body {
 <a href="delete.php?id=<?php echo $id; ?>">Delete</a>
 <br>
 <a href="edit.php?id=<?php echo $id; ?>">Edit</a>
->>>>>>> 8119d1af82cfa205c3a1907ca5c82c38d512a1bd
 </body>
 </html>

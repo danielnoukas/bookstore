@@ -1,6 +1,12 @@
 <?php
 require_once 'db_connection.php';
 var_dump($_GET);
+if ($_GET['save'] == 'salvesta') {
+  $year = $_GET['year'];
+  $stmt = $pdo->prepare('UPDATE books SET release_date = :year WHERE id =id ');
+  $stmt->execute(['id' => $id, 'year' => $year]);
+}
+
 $id = $_GET['id'];
 $stmt = $pdo->prepare('SELECT * FROM Books.books b LEFT JOIN book_authors ba ON ba.book_id = b.id
 LEFT JOIN authors a ON ba.author_id = a.id WHERE b.id = :id');
@@ -34,7 +40,8 @@ body {
        
         <input type='text' name='year' value='<?php echo $book['release_date']; ?>'>
         <br>
-        <input type='submit' value='Salvesta'>
+        <input type='save' value='salvesta'>
+        <input type="hidden" name="id" value='<?php echo $book['id']; ?>'>
     </form>
 
 </body>
