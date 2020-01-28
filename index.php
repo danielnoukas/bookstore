@@ -58,6 +58,8 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
 ?>
     </ul>
 </body>
-</html>/ul>
+</html> echo '</ul>';
+?>
+    </ul>
 </body>
-</html>>
+</html>
