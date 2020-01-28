@@ -21,10 +21,15 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+    <div class="b">
+    <h1>Otsing</h1>
+    <div>
+
 </head>
 <body>
 <body style='background-color:#e6e5ca'>
-    <h1>Otsing</h1>
 
 
     <form action="index.php" method="get">
@@ -53,4 +58,6 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
 ?>
     </ul>
 </body>
-</html>
+</html>/ul>
+</body>
+</html>>
