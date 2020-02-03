@@ -44,8 +44,6 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     </form>
     <ul>
 
-
-
 <?php
     $stmt = $pdo->prepare('SELECT * FROM books WHERE release_date LIKE :year AND title LIKE :title');
     $stmt->execute(['year' => '%' . $year . '%', 'title' => '%' . $title . '%']);
@@ -56,10 +54,6 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
     }
     echo '</ul>';
 ?>
-    </ul>
-</body>
-</html> echo '</ul>';
-?>
-    </ul>
+
 </body>
 </html>
