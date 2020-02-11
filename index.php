@@ -4,12 +4,6 @@ require_once 'db_connection.php';
 //var_dump($_GET);
 $title = $_GET['title'];
 $year = $_GET['year'];
-$stmt = $pdo->prepare('SELECT title, first_name, last_name, release_date, authors.id
-FROM books
-LEFT JOIN book_authors ON books.id=book_authors.book_id
-LEFT JOIN authors ON authors.id=book_authors.author_id
-WHERE title LIKE :title AND release_date= :year');
-$stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
 ?>
 
 
@@ -41,6 +35,9 @@ $stmt->execute (['title'=> '%' . $title . '%', 'year' => $year]);
         <br>
         <br>
         <input type='submit' value='Otsi'>
+
+        <a href="add.php?id=<?php echo $id; ?>">Lisa</a>
+
     </form>
     <ul>
 

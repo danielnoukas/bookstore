@@ -26,19 +26,11 @@ $stmt->execute ();
 <body>
 <body style='background-color:#e6e5ca'>
 
-
-    <form action="index.php" method="post">
-       
-        <input type='text' name='title' placeholder='Pealkiri'>
-        <br>
-        <input type='text' name='year' placeholder='Aasta'>
-        <br>
-        <input type='submit' value='Otsi'>
-        
-    </form>
-    <ul>
-
 <?php
+
+     $stmt = $pdo->prepare('SELECT * FROM Books.authors WHERE release_date LIKE :year AND title LIKE :title');
+    $stmt->execute(['year' => '%' . $year . '%', 'title' => '%' . $title . '%']);
+
     echo '<ul>';
     while ( $row = $stmt->fetch() ) {
         echo '<li><a href="book.php?id=' . $row['id'] . '">' . $row['title'] . '</a></li>';
